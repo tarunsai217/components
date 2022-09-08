@@ -1,0 +1,147 @@
+.side-nav {
+  width: 300px;
+  height: 150vh;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.5s;
+  background: #0057ad;
+  box-shadow: 3px 4px 18px rgba(0, 87, 173, 0.6);
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    padding-bottom: 0;
+    img {
+      height: 50px;
+    }
+  }
+
+  .main-navigation {
+    display: flex;
+    flex-direction: column;
+
+    .bottom-border {
+      margin-top: 20px;
+      width: 90%;
+      border-bottom: 2px solid #ffffff;
+      align-self: center;
+    }
+  }
+
+  .secondary-navigation {
+    display: flex;
+    flex-direction: column;
+
+    .expand-icon {
+      height: 23px;
+      justify-self: center;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+  }
+
+  .bottom-navigation {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    margin-bottom: 20px;
+
+    .collapse-icon {
+      height: 23px;
+      max-width: fit-content;
+      margin-top: 15px;
+      margin-left: auto;
+      margin-right: 5%;
+      cursor: pointer;
+    }
+  }
+}
+
+.side-nav-collapse {
+  width: 180px;
+  .logo-container {
+    margin-bottom: 10px;
+    img {
+      height: 30px;
+    }
+  }
+}
+
+.user-card {
+  display: flex;
+  padding: 15px 20px;
+  border-bottom: 1.25px solid #ffffff;
+  .user-details {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    margin-left: 20px;
+    align-self: center;
+
+    .user-name {
+      font-size: 24px;
+      font-weight: 540;
+      margin-bottom: 5px;
+    }
+    .user-organisation {
+      font-size: 14px;
+    }
+  }
+}
+
+.user-card-collapse {
+  justify-content: center;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  color: #ffffff;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ffffff;
+    color: #0057ad;
+
+    .nav-icon {
+      background-color: #0057ad;
+    }
+  }
+  .nav-icon {
+    padding: 15px 20px;
+  }
+  .nav-name {
+    font-size: 18px;
+    font-weight: 530;
+  }
+}
+
+.nav-item-collapse {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  color: #ffffff;
+  cursor: pointer;
+  margin-bottom: 10px;
+
+  &:hover {
+    background-color: #ffffff;
+    color: #0057ad;
+
+    .nav-icon {
+      background-color: #0057ad;
+    }
+  }
+  .nav-icon {
+    padding: 10px 10px;
+    padding-bottom: 5px;
+  }
+  .nav-name {
+    font-size: 14px;
+    font-weight: 530;
+  }
+}
