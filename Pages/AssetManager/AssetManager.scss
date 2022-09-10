@@ -83,12 +83,15 @@
       .asset-explorer-items {
         max-height: 40vh;
         overflow-y: scroll;
+        padding: 0 25px;
       }
 
       .asset-uploading-items {
-        max-height: 20vh;
+        max-height: 15vh;
         overflow-y: scroll;
         margin-top: auto;
+        padding: 0 25px;
+        border-top: 1.5px solid rgba(203, 203, 203, 1);
       }
 
       .asset-image-upload-container {

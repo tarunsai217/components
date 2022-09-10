@@ -1,57 +1,59 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import './AssetManager.scss';
 import SideNavbar from '../../Components/SideNavigation/SideNavigation';
 import AssetExplorerItem from './Components/AssetItem/AssetItem';
 import AssetUploadingItem from './Components/AssetUploadingItem/AssetUploadingItem';
 
 export default function AssetManager() {
-  const items = [
+  const itemsInitData = [
     {
       label: 'Taj Vivanta Bedroom Luxury Sui...png',
       preview: '',
-      dimenisons: '77x88 px',
+      dimensions: '77x88 px',
       size: '740KB',
       link: '(link)',
     },
     {
       label: 'OLA Pass.pdf',
       preview: '',
-      dimenisons: ' - ',
+      dimensions: ' - ',
       size: '1.2MB',
       link: '(link)',
     },
     {
       label: 'Radisson blue Guwhati Building.jpg',
       preview: '',
-      dimenisons: '90x98 px',
+      dimensions: '90x98 px',
       size: '1.9MB',
       link: '(link)',
     },
     {
       label: 'Radisson blue Guwhati Building.jpg',
       preview: '',
-      dimenisons: '90x98 px',
+      dimensions: '90x98 px',
       size: '1.9MB',
       link: '(link)',
     },
   ];
 
-  const uploadingItems = [
+  const uploadingItemsInitData = [
     {
       label: 'OLA Pass.pdf',
       preview: '',
-      dimenisons: ' - ',
+      dimensions: ' - ',
       size: '1.2MB',
       link: '(link)',
     },
     {
       label: 'Radisson blue Guwhati Building.jpg',
       preview: '',
-      dimenisons: '90x98 px',
+      dimensions: '90x98 px',
       size: '1.9MB',
       link: '(link)',
     },
   ];
+  const [assetItems, setAssetItems] = useState(itemsInitData);
+  const [uploadingItems, setUploadingItems] = useState(uploadingItemsInitData);
   const inputFile = useRef(null);
 
   const uploadClickHandler = () => {
@@ -59,9 +61,20 @@ export default function AssetManager() {
   };
 
   const fileUploadhandler = (e) => {
-    console.log('label');
-    console.log('size');
-    console.log('dimensions');
+    const file = e.target.files[0];
+    console.log('file received', file);
+    setUploadingItems((prev) => {
+      return [
+        {
+          label: file.name,
+          size: file.size,
+          preview: '',
+          link: '',
+          dimensions: '',
+        },
+        ...prev,
+      ];
+    });
   };
 
   return (
@@ -86,13 +99,13 @@ export default function AssetManager() {
               <span className="actions"></span>
             </div>
             <div className="asset-explorer-items">
-              {items.map((item) => {
+              {assetItems.map((item) => {
                 return <AssetExplorerItem item={item} />;
               })}
             </div>
 
             <div className="asset-uploading-items">
-              {items.map((item) => {
+              {uploadingItems.map((item) => {
                 return <AssetUploadingItem item={item} />;
               })}
             </div>

@@ -6,14 +6,14 @@ import downloadIcon from '../../Assets/download.svg';
 import attachIcon from '../../Assets/attach.svg';
 
 export default function AssetItem({ item }) {
-  const { label, dimenisons, size, link } = item;
+  const { label, dimensions, size, link } = item;
   return (
     <div className="asset-explorer-item">
       <span className="label">{label}</span>
       <span className="preview">
         <img src={hotelimg} />
       </span>
-      <span className="dimensions">{dimenisons}</span>
+      <span className="dimensions">{dimensions ? dimensions : ' - '}</span>
       <span className="size">{size}</span>
       <div className="actions">
         <span className="attach">
