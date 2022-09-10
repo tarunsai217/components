@@ -22,7 +22,7 @@ export default function App() {
       {/* <Transport /> */}
       {/* <ActivityRow /> */}
       {/* <Dropdown /> */}
-      {/* <Rating /> */}
+      <Rating />
       {/* <PhoneNumber /> */}
       {/* <Switch /> */}
       <AssetManager />
