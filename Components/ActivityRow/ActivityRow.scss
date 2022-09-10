@@ -6,19 +6,25 @@
     align-items: center;
     background: #ffffff;
     box-shadow: 0px 3.91667px 9.79167px rgba(73, 101, 201, 0.34);
-    padding: 10px;
+    padding: 20px;
     margin-bottom: 20px;
 
     .id {
       flex: 1 1 5%;
+      font-weight: 550;
     }
     .activity-image {
-      flex: 1 1 10%;
+      flex: 1 1 20%;
+      width: 200px;
+      height: 125px;
+      //should be added later
+      // padding: 0 15px;
     }
     .activity-details {
-      flex: 1 1 15%;
+      flex: 1 1 25%;
       display: flex;
       flex-direction: column;
+      padding: 0 15px;
       .name {
         font-weight: 600;
         margin: 0px;
@@ -29,21 +35,46 @@
       }
     }
     .event {
-      border: 2px solid #d1d1d1;
-      border-radius: 5px;
-      padding: 5px 8px;
+      flex: 1 1 15%;
+      display: flex;
+      justify-content: center;
+      span {
+        font-size: 14px;
+        border: 2.5px solid #d1d1d1;
+        border-radius: 5px;
+        padding: 3px 8px;
+        max-width: fit-content;
+      }
     }
     .location {
-      border: 2px solid #d1d1d1;
-      padding: 5px;
+      flex: 1 1 20%;
+      padding: 0px 20px;
+      display: flex;
+      justify-content: center;
+      span {
+        border: 2px solid #d1d1d1;
+        padding: 3px;
+        max-width: fit-content;
+      }
     }
     .settings-wrapper {
+      flex: 0 1 5%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      img {
+        height: 20px;
+        cursor: pointer;
+      }
+      span {
+        color: #c7c7c7;
+        font-size: 14px;
+        font-weight: 600;
+      }
     }
     .select-button {
+      flex: 0 1 10%;
       background-color: transparent;
       outline: none;
       border: none;

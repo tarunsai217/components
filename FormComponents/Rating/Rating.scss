@@ -1,0 +1,12 @@
+.rating {
+  display: flex;
+  align-items: center;
+  .star {
+    margin-right: 5px;
+    cursor: pointer;
+  }
+
+  .rating-number {
+    margin-left: 20px;
+  }
+}
