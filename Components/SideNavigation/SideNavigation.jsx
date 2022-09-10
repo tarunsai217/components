@@ -32,7 +32,6 @@ export default function SideNavigation() {
 function NavItem({ item, active, setActive }) {
   const { name } = item;
   const activeStatus = name == active;
-  console.log('item', item);
   const onClickHandler = () => {
     setActive(name);
   };

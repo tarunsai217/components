@@ -1,7 +1,8 @@
-import * as React from 'react';
+import React, { useRef } from 'react';
 import './AssetManager.scss';
 import SideNavbar from '../../Components/SideNavigation/SideNavigation';
 import AssetExplorerItem from './Components/AssetItem/AssetItem';
+import AssetUploadingItem from './Components/AssetUploadingItem/AssetUploadingItem';
 
 export default function AssetManager() {
   const items = [
@@ -26,7 +27,42 @@ export default function AssetManager() {
       size: '1.9MB',
       link: '(link)',
     },
+    {
+      label: 'Radisson blue Guwhati Building.jpg',
+      preview: '',
+      dimenisons: '90x98 px',
+      size: '1.9MB',
+      link: '(link)',
+    },
   ];
+
+  const uploadingItems = [
+    {
+      label: 'OLA Pass.pdf',
+      preview: '',
+      dimenisons: ' - ',
+      size: '1.2MB',
+      link: '(link)',
+    },
+    {
+      label: 'Radisson blue Guwhati Building.jpg',
+      preview: '',
+      dimenisons: '90x98 px',
+      size: '1.9MB',
+      link: '(link)',
+    },
+  ];
+  const inputFile = useRef(null);
+
+  const uploadClickHandler = () => {
+    inputFile.current.click();
+  };
+
+  const fileUploadhandler = (e) => {
+    console.log('label');
+    console.log('size');
+    console.log('dimensions');
+  };
 
   return (
     <div className="asset-manager-page">
@@ -47,12 +83,31 @@ export default function AssetManager() {
               <span className="preview">Preview</span>
               <span className="dimensions">Dimensions</span>
               <span className="size">Size</span>
-              <span className="link"></span>
-              <span className="del"></span>
+              <span className="actions"></span>
             </div>
-            {items.map((item) => {
-              return <AssetExplorerItem item={item} />;
-            })}
+            <div className="asset-explorer-items">
+              {items.map((item) => {
+                return <AssetExplorerItem item={item} />;
+              })}
+            </div>
+
+            <div className="asset-uploading-items">
+              {items.map((item) => {
+                return <AssetUploadingItem item={item} />;
+              })}
+            </div>
+
+            <div
+              onClick={uploadClickHandler}
+              className="asset-image-upload-container"
+            >
+              <input onChange={fileUploadhandler} ref={inputFile} type="file" />
+              <div className="content">
+                <span>Drop file here</span>
+                <span>OR</span>
+                <button className="upload-button">Upload</button>
+              </div>
+            </div>
           </div>
         </div>
       </>

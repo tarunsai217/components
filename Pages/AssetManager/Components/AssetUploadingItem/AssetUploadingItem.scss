@@ -1,4 +1,4 @@
-.asset-explorer-item {
+.asset-uploading-item {
   display: flex;
   text-align: center;
   padding: 20px 2rem;
@@ -16,6 +16,16 @@
   .preview {
     flex: 1 1 20%;
   }
+
+  .uploading-status {
+    flex: 1 1 20%;
+    span {
+      background: #ffa3a3;
+      border-radius: 5px;
+      padding: 6px;
+      font-size: 12px;
+    }
+  }
   .dimensions {
     flex: 1 1 20%;
   }
@@ -24,17 +34,5 @@
   }
   .actions {
     flex: 1 1 15%;
-    display: flex;
-    align-items: center;
-    & > * {
-      margin-right: 15px;
-      cursor: pointer;
-      padding: 1.5px;
-      // border-right: 1px solid rgba(203, 203, 203, 1);
-    }
-    & > :last-child {
-      margin-right: 0px;
-      border: none;
-    }
   }
 }
