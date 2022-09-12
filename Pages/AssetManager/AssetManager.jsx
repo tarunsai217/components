@@ -3,8 +3,9 @@ import './AssetManager.scss';
 import SideNavbar from '../../Components/SideNavigation/SideNavigation';
 import AssetExplorerItem from './Components/AssetItem/AssetItem';
 import AssetUploadingItem from './Components/AssetUploadingItem/AssetUploadingItem';
+import WithSideNav from '../../Layout/WithSideNav/WithSideNav';
 
-export default function AssetManager() {
+function AssetManager() {
   const itemsInitData = [
     {
       label: 'Taj Vivanta Bedroom Luxury Sui...png',
@@ -78,52 +79,47 @@ export default function AssetManager() {
   };
 
   return (
-    <div className="asset-manager-page">
-      <div className="side-nav-wrapper">
-        <SideNavbar />
+    <div className="asset-manager-main">
+      <div className="asset-explorer-heading">
+        <h1>Asset Manager</h1>
       </div>
-      <>
-        <div className="asset-manager-main">
-          <div className="asset-explorer-heading">
-            <h1>Asset Manager</h1>
-          </div>
-          <div className="asset-explorer-search">
-            <input placeholder="Search" />
-          </div>
-          <div className="asset-explorer-main">
-            <div className="asset-explorer-main-heading">
-              <span className="label">Label</span>
-              <span className="preview">Preview</span>
-              <span className="dimensions">Dimensions</span>
-              <span className="size">Size</span>
-              <span className="actions"></span>
-            </div>
-            <div className="asset-explorer-items">
-              {assetItems.map((item) => {
-                return <AssetExplorerItem item={item} />;
-              })}
-            </div>
+      <div className="asset-explorer-search">
+        <input placeholder="Search" />
+      </div>
+      <div className="asset-explorer-main">
+        <div className="asset-explorer-main-heading">
+          <span className="label">Label</span>
+          <span className="preview">Preview</span>
+          <span className="dimensions">Dimensions</span>
+          <span className="size">Size</span>
+          <span className="actions"></span>
+        </div>
+        <div className="asset-explorer-items">
+          {assetItems.map((item, index) => {
+            return <AssetExplorerItem item={item} key={index} />;
+          })}
+        </div>
 
-            <div className="asset-uploading-items">
-              {uploadingItems.map((item) => {
-                return <AssetUploadingItem item={item} />;
-              })}
-            </div>
+        <div className="asset-uploading-items">
+          {uploadingItems.map((item, index) => {
+            return <AssetUploadingItem item={item} key={index} />;
+          })}
+        </div>
 
-            <div
-              onClick={uploadClickHandler}
-              className="asset-image-upload-container"
-            >
-              <input onChange={fileUploadhandler} ref={inputFile} type="file" />
-              <div className="content">
-                <span>Drop file here</span>
-                <span>OR</span>
-                <button className="upload-button">Upload</button>
-              </div>
-            </div>
+        <div
+          onClick={uploadClickHandler}
+          className="asset-image-upload-container"
+        >
+          <input onChange={fileUploadhandler} ref={inputFile} type="file" />
+          <div className="content">
+            <span>Drop file here</span>
+            <span>OR</span>
+            <button className="upload-button">Upload</button>
           </div>
         </div>
-      </>
+      </div>
     </div>
   );
 }
+
+export default WithSideNav(AssetManager, 'asset-manager-page');
