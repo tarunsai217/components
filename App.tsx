@@ -11,6 +11,9 @@ import PhoneNumber from './FormComponents/PhoneNumber/PhoneNumber';
 import Switch from './FormComponents/Switch/Switch';
 
 import AssetManager from './Pages/AssetManager/AssetManager';
+import UserCard from './Components/UserCard/UserCard';
+import img from './Components/UserCard/Assets/userimage.svg';
+import companylogo from './Components/UserCard/Assets/companylogo.svg';
 import './style.css';
 
 export default function App() {
@@ -25,6 +28,10 @@ export default function App() {
       {/* <Rating /> */}
       {/* <PhoneNumber /> */}
       {/* <Switch /> */}
+      <div style={{ height: '50px', width: '50px' }}>
+        <UserCard change={'KS'} fontSize={'24px'} />
+      </div>
+
       <AssetManager />
     </div>
   );
